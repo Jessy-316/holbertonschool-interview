@@ -11,10 +11,10 @@ numbers directly above it.
 def pascal_triangle(n):
     """
     Generate Pascal's triangle up to n rows.
-    
+
     Args:
         n (int): Number of rows to generate
-        
+
     Returns:
         list of lists: A list containing n lists, where each inner list
                        represents a row in Pascal's triangle.
