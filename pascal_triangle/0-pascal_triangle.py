@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+Pascal's Triangle Module
+
+This module provides a function to generate Pascal's triangle,
+a triangular array where each number is the sum of the two
+numbers directly above it.
+"""
+
+
 def pascal_triangle(n):
     """
     Generate Pascal's triangle up to n rows.
