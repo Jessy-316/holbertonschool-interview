@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
     Args:
         boxes (list of lists): A list where each element is a list of keys
                               Each key corresponds to a box number
-                
+           
     Returns:
         bool: True if all boxes can be opened, else False
     """
@@ -26,7 +26,7 @@ def canUnlockAll(boxes):
         current_box = keys_to_check.pop()
 
         for key in boxes[current_box]:
-            # If the key corresponds to a valid box and that box is still locked
+            #If the key corresponds to a valid box and that box is still locked
             if key < n and not unlocked[key]:
                 unlocked[key] = True
                 keys_to_check.append(key)
