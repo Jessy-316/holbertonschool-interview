@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""Documentation for the 0-stats module."""
+"""Statistics module."""
 import sys
 
+# Dictionary to store counts of status codes
 stats = {
     '200': 0,
     '301': 0,
@@ -12,17 +13,20 @@ stats = {
     '405': 0,
     '500': 0
 }
+
+# List to store file sizes
 sizes = [0]
 
 
 def print_stats():
-    """Print accumulated statistics"""
+    """Print statistics."""
     print('File size: {}'.format(sum(sizes)))
     for s_code, count in sorted(stats.items()):
         if count:
             print('{}: {}'.format(s_code, count))
 
 
+# Main program
 try:
     for i, line in enumerate(sys.stdin, start=1):
         matches = line.rstrip().split()
