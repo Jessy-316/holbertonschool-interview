@@ -2,7 +2,7 @@
 """Statistics module."""
 import sys
 
-# Dictionary to store counts of status codes
+"""Dictionary to store counts of status codes"""
 stats = {
     '200': 0,
     '301': 0,
@@ -14,7 +14,7 @@ stats = {
     '500': 0
 }
 
-# List to store file sizes
+"""List to store file sizes"""
 sizes = [0]
 
 
@@ -26,7 +26,7 @@ def print_stats():
             print('{}: {}'.format(s_code, count))
 
 
-# Main program
+"""Main program"""
 try:
     for i, line in enumerate(sys.stdin, start=1):
         matches = line.rstrip().split()
