@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Input stats"""
+"""Log parsing script to compute metrics from stdin"""
 import sys
 
 stats = {
@@ -16,6 +16,7 @@ sizes = [0]
 
 
 def print_stats():
+    """Print accumulated statistics"""
     print('File size: {}'.format(sum(sizes)))
     for s_code, count in sorted(stats.items()):
         if count:
