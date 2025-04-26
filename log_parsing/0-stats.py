@@ -27,7 +27,7 @@ if __name__ == "__main__":
                 if len(parts) > 2:
                     status_code = parts[-2]
                     file_size = int(parts[-1])
-                    
+
                     if status_code in stats:
                         stats[status_code] += 1
                     total_size += file_size
@@ -36,9 +36,9 @@ if __name__ == "__main__":
 
             if count % 10 == 0:
                 print_stats(stats, total_size)
-                
+
         print_stats(stats, total_size)
-                
+
     except KeyboardInterrupt:
         print_stats(stats, total_size)
         raise
