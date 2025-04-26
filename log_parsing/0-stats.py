@@ -22,25 +22,28 @@ if __name__ == "__main__":
     }
     
     # Regex pattern to validate log line format
-    pattern = r'^(\d+\.\d+\.\d+\.\d+) - \[(.+)\] "GET /projects/260 HTTP/1.1" (\d+) (\d+)$'
+    pattern = r'^(\d+\.\d+\.\d+\.\d+) - \[(.+)\] "GET /projects/\d+ HTTP/1\.1" (\d+) (\d+)$'
     
     try:
         for line in sys.stdin:
-            line = line.strip()
-            match = re.match(pattern, line)
-            
-            if match:
-                status_code = int(match.group(3))
-                file_size = int(match.group(4))
+            try:
+                line = line.strip()
+                match = re.match(pattern, line)
                 
-                total_size += file_size
-                if status_code in status_codes:
-                    status_codes[status_code] += 1
-                
-                line_count += 1
-                
-                if line_count % 10 == 0:
-                    print_stats(total_size, status_codes)
+                if match:
+                    status_code = int(match.group(3))
+                    file_size = int(match.group(4))
+                    
+                    total_size += file_size
+                    if status_code in status_codes:
+                        status_codes[status_code] += 1
+                    
+                    line_count += 1
+                    
+                    if line_count % 10 == 0:
+                        print_stats(total_size, status_codes)
+            except Exception:
+                continue
     
     except KeyboardInterrupt:
         pass
