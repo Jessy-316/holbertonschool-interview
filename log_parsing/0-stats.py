@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Log parsing script to compute metrics from stdin"""
+"""Documentation for the 0-stats module."""
 import sys
 
 stats = {
